@@ -1,8 +1,7 @@
-# docsify-demo
-
+# 气相色谱
 [如何使用docsify搭建文档类型的网站](https://mp.weixin.qq.com/s/TPXHaTdfTYKrcpm77gPHyA)
 
-### 安利一个在线学习Java的文档
+### 气相色谱学习网站
 
 - 在线阅读地址：https://snailclimb.gitee.io/javaguide-interview/#/
 - Github：https://github.com/Snailclimb/JavaGuide-Interview
