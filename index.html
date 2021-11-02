@@ -1,55 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
 <head>
-  <meta charset="UTF-8">
-  <title>GCMS 气相色谱质谱</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <meta charset="UTF-8">
+    <title>郑州大学色谱质谱分析小组</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 设置浏览器图标 -->
+    <link rel="icon" href="/image/chemistry-lab-chemistry-lab-education.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/image/chemistry-lab-chemistry-lab-education.ico" type="image/x-icon" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 默认主题 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+
+
 </head>
 
 <body>
-  <div id="app"></div>
-  <!-- docsify-edit-on-github -->
-  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
-  <script>
-    window.$docsify = {
-      name: 'docsify-demo',
-      repo: 'https://github.com/Snailclimb/JavaGuide-Interview',
-      maxLevel: 5,//最大支持渲染的标题层级
-      subMaxLevel: 3,
-      homepage: 'README.md',
-      coverpage: false,
-      loadSidebar: true,
-      auto2top: true,//切换页面后是否自动跳转到页面顶部
-      //全文搜索
-      search: {
-        //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto',
-        placeholder: '搜索',
-        noData: '找不到结果',
-        // 搜索标题的最大程级, 1 - 6
-        depth: 3,
+    <script>
+        window.$docsify = {
+            // 项目名称
+            name: '色谱质谱分析小组',
+            // 仓库地址，点击右上角的Github章鱼猫头像会跳转到此地址
+            repo: 'https://github.com/chendi20082009/docsify',
+            // 侧边栏支持，默认加载的是项目根目录下的_sidebar.md文件
+            loadSidebar: true,
+            // 导航栏支持，默认加载的是项目根目录下的_navbar.md文件
+            loadNavbar: true,
+            // 封面支持，默认加载的是项目根目录下的_coverpage.md文件
+            coverpage: false,
+            // 最大支持渲染的标题层级
+            maxLevel: 3,
+            // 自定义侧边栏后默认不会再生成目录，设置生成目录的最大层级，建议配置为1或者2
+            subMaxLevel: 1,
+            //字数统计配置
+            count:{
+            countable:true,
+            fontsize:'0.9em',
+            color:'rgb(90,90,90)',
+            language:'chinese',
+            isExpected: false // 是否显示需要阅读的分钟数
+             },
+            //复制功能配置
+           copyCode: {
+              buttonText: {'/' : '点击复制'},
+              errorText: {'/' : '错误'},
+              successText: {'/' : '已复制'}
+            },
+          //脚注功能
+          plugins: [
+          function(hook) {
+          var footer = [
+         '<hr/>',
+         '<footer>',
+         '<span><a href="https://github.com/chendi20082009">Di Chen</a> &copy;2021.</span>',
+         '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+         '</footer>'
+          ].join('');
+
+          hook.afterEach(function(html) {
+          return html + footer;
+       });
+     }
+     ],
+         
+
+           // 全文搜索配置
+          search: 'auto', // 默认值
+
+    search : [
+      '/',            // => /README.md
+      '/guide',       // => /guide.md
+      '/get-started', // => /get-started.md
+      '/zh-cn/',      // => /zh-cn/README.md
+    ],
+
+    // 完整配置参数
+    search: {
+      maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+      paths: [], // or 'auto'
+      placeholder: 'Type to search',
+
+      // 支持本地化
+      placeholder: {
+        '/zh-cn/': '搜索',
+        '/': '输入搜索'
       },
-      plugins: [
-        EditOnGithubPlugin.create('https://github.com/Snailclimb/JavaGuide-Interview/blob/master/')
-      ],
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <!--Java代码高亮-->
-  <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
-  <!--全文搜索,直接用官方提供的无法生效-->
-  <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
-  <!-- 复制到剪贴板 -->
-  <script src="//unpkg.com/docsify-copy-code"></script>
-  <!-- 图片缩放 -->
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
-  <!-- 字数统计 -->
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+      noData: 'No Results',
+
+      // 支持本地化
+      noData: {
+        '/zh-cn/': '找不到结果',
+        '/': '找不到结果'
+      },
+
+      // 搜索标题的最大层级, 1 - 6
+      depth: 2,
+
+      hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+
+      // 避免搜索索引冲突
+      // 同一域下的多个网站之间
+      namespace: 'website-1',
+
+      // 使用不同的索引作为路径前缀（namespaces）
+      // 注意：仅适用于 paths: 'auto' 模式
+      //
+      // 初始化索引时，我们从侧边栏查找第一个路径
+      // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+      pathNamespaces: ['/zh-cn', '/ru-ru', '/ru-ru/v1'],
+
+      // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+      // 匹配到的字符串将被用来识别索引
+      pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+    },
+      //
+        }
+    </script>
+
+
+    </script>
+    <!-- docsify的js依赖 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <!-- emoji表情支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!-- 图片放大缩小支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- 搜索功能支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- 链接下一篇文章插件, 可以再文章底部显示“下一篇”和“上一篇” -->
+    <!script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!-- 字数统计 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <!-- 外链脚本 - External Script -->    
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+    <!-- 复制到剪贴板，在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>  
+    <!-- docsify-edit-on-github -->     
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+
+<nav>
+    <a href="http://www.zzu.edu.cn">🧱郑州大学</a>
+    <a href="http://www5.zzu.edu.cn/yxy">💊郑州大学药学院</a>
+    <a href="https://spring.throwx.cn">❤️ 河南省肿瘤重大疾病靶向治疗与诊断重点实验室</a>
+  </nav>
+  <div id="app">加载中......</div>
+
+
+
 </body>
 
 </html>
